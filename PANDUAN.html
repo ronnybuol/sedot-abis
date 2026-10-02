@@ -1,0 +1,149 @@
+<!doctype html><html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bantuan · Sedot Abis</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f5f2ef;color:#29252a;font:16px/1.65 system-ui,sans-serif}header{background:#7e2136;color:white;padding:42px max(24px,calc((100vw - 1050px)/2))}header h1{font-size:46px;line-height:1.1;margin:10px 0}header p{margin:0;opacity:.9}.tag{font-size:12px;letter-spacing:2px;text-transform:uppercase}main{max-width:1100px;margin:auto;padding:30px 24px;display:grid;grid-template-columns:240px 1fr;gap:26px}nav{position:sticky;top:24px;align-self:start;background:#fff;padding:20px;border-radius:12px}nav a{display:block;font-size:13px;margin:12px 0;text-decoration:none;color:#7e2136}section{background:white;border:1px solid #e6ddd7;border-radius:12px;padding:24px;margin-bottom:20px;scroll-margin-top:20px}h2{font-size:19px;line-height:1.4;color:#7e2136;margin:0 0 16px}p{margin:10px 0}.bullet{padding-left:17px;border-left:3px solid #e6ddd7}pre{overflow:auto;background:#25222a;color:#fff;padding:16px;border-radius:8px;font:14px/1.6 Consolas,monospace}a{color:#7e2136;overflow-wrap:anywhere}.quick{border-top:5px solid #7e2136}footer{text-align:center;color:#655d65;padding:20px;font-size:13px}.print{background:white;color:#7e2136;border:0;padding:10px 15px;border-radius:6px;cursor:pointer;margin-top:15px}@media(max-width:800px){main{grid-template-columns:1fr}nav{position:static}header h1{font-size:36px}}@media print{nav,.print{display:none}main{display:block;padding:0}header{background:white;color:#7e2136;padding:20px}section{break-inside:auto;border:0;padding:10px 0}pre{white-space:pre-wrap;background:#eee;color:#111}}
+</style><header><div class="tag">Internal Zonautara · Bantuan 1.0.2 · Revisi 3 Oktober 2026</div><h1>Sedot Abis</h1><p>Dari instalasi pertama sampai unduhan selesai.</p><button class="print" onclick="window.print()">Cetak / Simpan sebagai PDF</button></header><main><nav><strong>Isi panduan</strong><a href="#s1">1. MEMASANG PYTHON PADA KOMPUTER TIM</a><a href="#s2">2. MEMASANG FILE APLIKASI</a><a href="#s3">3. MELENGKAPI FFMPEG, DENO, DAN CURL_CFFI</a><a href="#s4">4. MENGGUNAKAN APLIKASI</a><a href="#s5">5. PILIHAN JENIS UNDUHAN</a><a href="#s6">6. SELURUH OPSI TAMBAHAN</a><a href="#s7">7. MEMPERBARUI DAN MENJALANKAN SECARA MANUAL</a><a href="#s8">8. PEMECAHAN MASALAH</a><a href="#s9">9. PENYIMPANAN DAN BATAS VERSI INI</a><a href="#s10">10. SUMBER DOKUMENTASI</a></nav><article><section class="quick"><p>SEDOT ABIS 1.0.2 — PANDUAN PENGGUNA</p>
+<p>Revisi bantuan: 3 Oktober 2026</p>
+<p>Pengunduh video, audio, subtitle, dan arsip sumber untuk internal Zonautara.</p>
+<p>MULAI CEPAT UNTUK RONNY</p>
+<p>Python 3.10 atau lebih baru memenuhi syarat. Jika Python sudah terpasang, tidak perlu memasangnya lagi. Versi Python aplikasi terlihat pada Status &amp; log.</p>
+<p>1. Ekstrak ZIP. Jangan menjalankan file langsung dari dalam ZIP.</p>
+<p>2. Klik INSTALL.bat dan tunggu sampai muncul BERHASIL.</p>
+<p>3. Klik PASANG_ALAT.bat untuk memasang FFmpeg dan Deno; atau ikuti cara manual.</p>
+<p>4. Tutup aplikasi/jendela terminal yang lama, lalu klik MULAI.bat.</p>
+<p>5. Buka Status &amp; log &gt; Cek komponen. Pastikan semua komponen ditemukan.</p>
+<p>6. Tempel tautan, pilih jenis unduhan dan folder, lalu klik Sedot sekarang.</p>
+<p>7. Versi 1.0.2 sudah menyertakan curl_cffi melalui INSTALL.bat. Jika situs masih gagal, periksa target impersonation sesuai bagian 3.</p>
+<p>UNTUK APLIKASI YANG SUDAH TERPASANG</p>
+<p class="bullet">Pembaruan bantuan cukup mengganti PANDUAN.txt dan PANDUAN.html dalam folder aplikasi lama, lalu membuka ulang MULAI.bat.</p>
+<p class="bullet">Tidak perlu menjalankan INSTALL.bat atau PASANG_ALAT.bat untuk memperbarui bantuan.</p>
+<p class="bullet">Untuk pembaruan ke 1.0.2, salin sedot_abis.py, sedot_core.py, requirements.txt, PANDUAN.txt, dan PANDUAN.html ke folder lama. Pertahankan .venv dan tools. Buka MULAI.bat; gunakan Perbarui yt-dlp jika curl_cffi belum tersedia.</p></section><section id="s1"><h2>1. MEMASANG PYTHON PADA KOMPUTER TIM</h2><p class="bullet">Gunakan Windows 10/11 64-bit. Python minimal 3.10; pilih rilis Python 3 yang masih didukung.</p>
+<p class="bullet">Buka <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">https://www.python.org/downloads/windows/</a></p>
+<p class="bullet">Pilih rilis stabil yang menyediakan Windows installer (64-bit), bukan embeddable package atau source code.</p>
+<p class="bullet">Jalankan installer. Jika ada pilihan Add python.exe to PATH, centang pilihan tersebut.</p>
+<p class="bullet">Pastikan pip dan Tcl/Tk (Tkinter) ikut dipasang. Installer standar biasanya sudah menyertakannya.</p>
+<p class="bullet">Selesaikan instalasi lalu buka Command Prompt baru. Periksa dengan:</p>
+<pre><code>python --version
+Jika memakai Python Launcher/Install Manager, periksa juga:
+py -3 --version</code></pre>
+<p class="bullet">Salah satu perintah harus menampilkan Python 3.10 atau lebih baru.</p>
+<p class="bullet">INSTALL.bat akan mencoba py -3 terlebih dahulu, lalu python.</p>
+<p class="bullet">Pada Python Install Manager yang lebih baru, tampilan instalasi bisa berbeda. Pastikan satu runtime Python 3 terpasang, bukan hanya manajernya.</p></section><section id="s2"><h2>2. MEMASANG FILE APLIKASI</h2><p class="bullet">Ekstrak seluruh ZIP melalui klik kanan &gt; Extract All / Ekstrak semua.</p>
+<p class="bullet">Contoh folder: F:\03 - SOFTWARE\Sedot-Abis</p>
+<p class="bullet">sedot_abis.py adalah file utama aplikasi. sedot_core.py berisi logika unduhan. Keduanya harus tetap dalam folder yang sama.</p>
+<p class="bullet">Klik INSTALL.bat. Skrip membuat folder .venv dan memasang yt-dlp beserta paket pendukung dari PyPI.</p>
+<p class="bullet">.venv adalah lingkungan Python khusus aplikasi, supaya paketnya terpisah dari instalasi Python lain.</p>
+<p class="bullet">yt-dlp yang sebelumnya Anda pasang tidak dihapus; aplikasi ini memakai salinannya sendiri.</p>
+<p class="bullet">Paket di C:\Users\Ronny\AppData\Local\Programs\Python\Python310\Lib\site-packages tidak otomatis terbaca oleh .venv aplikasi.</p>
+<p class="bullet">Python utama dan Python .venv bisa berbeda versi; misalnya Python utama 3.10 sedangkan .venv 3.13. Keduanya dapat tetap ada.</p>
+<p class="bullet">Untuk memasang paket tambahan aplikasi, selalu gunakan .venv\Scripts\python.exe -m pip dari folder aplikasi, bukan sekadar pip install atau python -m pip install. Jangan menyalin folder site-packages secara manual.</p>
+<p class="bullet">Internet diperlukan saat instalasi dan unduhan. Instalasi Python tetap dilakukan melalui installer Python.</p>
+<p class="bullet">Tkinter adalah antarmuka bawaan Python; tidak perlu pip install tkinter.</p>
+<p class="bullet">Setelah berhasil, gunakan MULAI.bat. Jendela terminal kecil dapat tetap terbuka selama aplikasi berjalan; jangan menutupnya saat mengunduh.</p>
+<p class="bullet">Buat shortcut MULAI.bat di Desktop untuk akses cepat.</p></section><section id="s3"><h2>3. MELENGKAPI FFMPEG, DENO, DAN CURL_CFFI</h2><p>FFmpeg menggabungkan video dengan audio, mengubah audio menjadi MP3, dan mengambil potongan. ffprobe membaca informasi media. Sedot Abis mensyaratkan keduanya untuk mode Video, MP3, dan Paket arsip.</p>
+<p>Deno menjalankan komponen JavaScript yt-dlp untuk dukungan YouTube. Paket yt-dlp-ejs ikut dipasang oleh INSTALL.bat; Deno dipasang terpisah.</p>
+<p>Cara praktis pada Windows dengan winget:</p>
+<p>Klik PASANG_ALAT.bat, lalu ikuti permintaan persetujuan paket/Windows yang muncul.</p>
+<p>Perintah yang digunakan:</p>
+<pre><code>winget install --id Gyan.FFmpeg --exact
+winget install --id DenoLand.Deno --exact</code></pre>
+<p>Tutup lalu buka ulang aplikasi agar perubahan PATH terbaca. Jika tidak ditemukan, gunakan cara manual.</p>
+<p>Cara manual tanpa mengubah PATH:</p>
+<p>a. Buka <a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener">https://ffmpeg.org/download.html</a> &gt; Windows &gt; penyedia build Gyan.</p>
+<p>b. Pada <a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" rel="noopener">https://www.gyan.dev/ffmpeg/builds/</a> pilih ffmpeg-release-essentials.zip.</p>
+<p>c. Ekstrak ZIP, buka folder bin di dalam hasil ekstraksi, lalu salin ffmpeg.exe dan ffprobe.exe.</p>
+<p>d. Buka <a href="https://github.com/denoland/deno/releases" target="_blank" rel="noopener">https://github.com/denoland/deno/releases</a> dan pilih ZIP Windows x64 bernama deno-x86_64-pc-windows-msvc.zip.</p>
+<p>e. Ekstrak ZIP dan ambil deno.exe.</p>
+<p>f. Letakkan ketiga .exe langsung dalam folder Sedot-Abis\tools\bin\.</p>
+<p>g. Buka aplikasi &gt; Status &amp; log &gt; Cek komponen.</p>
+<p>Sedot Abis mencari tools\bin terlebih dahulu, kemudian PATH Windows.</p>
+<p>Dokumentasi Deno: <a href="https://docs.deno.com/runtime/getting_started/installation/" target="_blank" rel="noopener">https://docs.deno.com/runtime/getting_started/installation/</a></p>
+<p>Impersonation yt-dlp: <a href="https://github.com/yt-dlp/yt-dlp#impersonation" target="_blank" rel="noopener">https://github.com/yt-dlp/yt-dlp#impersonation</a></p>
+<p>Jangan memasang paket Python bernama ffmpeg sebagai pengganti ffmpeg.exe.</p>
+<p>Impersonation / curl_cffi untuk situs tertentu:</p>
+<p>Sebagian situs memeriksa ciri koneksi browser. curl_cffi membantu yt-dlp mengirim permintaan yang menyerupai browser. Ini berbeda dari Deno dan FFmpeg; masing-masing mempunyai fungsi sendiri.</p>
+<p>Instalasi versi 1.0.0 dan 1.0.1 memakai yt-dlp[default]. Sejak versi 1.0.2, INSTALL.bat dan tombol Perbarui yt-dlp menyertakan tambahan curl-cffi. Jika curl_cffi sudah terpasang dalam .venv, tidak perlu memasang ulang hanya untuk membuka aplikasi atau mengganti bantuan.</p>
+<p>Cara memasang pada Python aplikasi:</p>
+<p>a. Tutup Sedot Abis terlebih dahulu.</p>
+<p>b. Buka Command Prompt dan masuk ke folder yang berisi MULAI.bat, sedot_abis.py, dan .venv. Contoh lokasi Ronny:</p>
+<pre><code>cd /d &quot;F:\03 - SOFTWARE\Sedot-Abis-v1.0.0\Sedot-Abis&quot;</code></pre>
+<p>c. Pasang atau perbarui dependensi pada .venv:</p>
+<pre><code>&quot;.venv\Scripts\python.exe&quot; -m pip install -U &quot;yt-dlp[default,curl-cffi]&quot;</code></pre>
+<p>d. Periksa daftar target browser:</p>
+<pre><code>&quot;.venv\Scripts\python.exe&quot; -m yt_dlp --list-impersonate-targets</code></pre>
+<p>e. Pastikan ada target yang tersedia, bukan seluruhnya ditandai tidak tersedia, lalu buka MULAI.bat dan coba kembali tautan.</p>
+<p>Nama tambahan instalasinya curl-cffi (tanda hubung); nama modul Python yang diimpor adalah curl_cffi (garis bawah).</p>
+<p>Tidak perlu menyalin file paket ke tools\bin. curl_cffi dipasang melalui pip ke lingkungan Python .venv.</p>
+<p>Pemeriksaan jika masih belum ditemukan:</p>
+<pre><code>&quot;.venv\Scripts\python.exe&quot; -m pip show curl-cffi
+&quot;.venv\Scripts\python.exe&quot; -c &quot;import sys, curl_cffi; print(sys.executable); print(curl_cffi.__file__)&quot;</code></pre>
+<p>Lokasi keluaran harus mengarah ke .venv aplikasi, bukan hanya instalasi Python 3.10 di luar folder aplikasi. Jika instalasi gagal, baca pesan pip; jangan menganggap paket sudah terpasang karena hanya ada pada Python lain.</p>
+<p>Target browser yang tersedia dapat berbeda menurut versi paket. Memasang dependensi ini mengatasi ketiadaan target impersonation, tetapi tidak menjamin semua situs, video privat, atau video yang memerlukan login dapat diunduh.</p></section><section id="s4"><h2>4. MENGGUNAKAN APLIKASI</h2><p class="bullet">Tab Unduh: tempel satu tautan per baris. Tautan ganda dalam daftar dibuang otomatis.</p>
+<p class="bullet">Pilih jenis, kualitas, dan folder tujuan. Folder bawaan: Downloads\Sedot Abis.</p>
+<p class="bullet">Tab Opsi tambahan: atur subtitle, metadata, catatan, potongan, playlist, atau kecepatan.</p>
+<p class="bullet">Klik tombol maron Sedot sekarang di kiri bawah, atau tekan Ctrl + Enter. Tautan diproses berurutan agar tidak membebani komputer/koneksi.</p>
+<p class="bullet">Tombol Hentikan di tengah aktif ketika proses berjalan. Tombol Buka folder hasil di kanan hanya membuka folder, bukan memulai unduhan.</p>
+<p class="bullet">Saat unduhan dimulai, aplikasi berpindah ke Status &amp; log dan menampilkan pesan Mulai. Jika yang terbuka hanya folder, Anda menekan tombol Buka folder hasil.</p>
+<p class="bullet">Saat pekerjaan aktif, perubahan isian baru berlaku pada pekerjaan berikutnya.</p>
+<p class="bullet">Progress bar menunjukkan file/arus media saat ini, bukan persentase seluruh antrean. Bar dapat kembali ke nol ketika berpindah audio, video, atau tautan.</p>
+<p class="bullet">Setelah video dan audio diunduh, FFmpeg mungkin masih bekerja. Tunggu pesan Selesai.</p>
+<p class="bullet">Klik Buka folder hasil untuk melihat hasil pekerjaan terakhir.</p>
+<p class="bullet">Hentikan membatalkan pekerjaan aktif dan tautan yang belum dimulai. File .part dipertahankan; jalankan kembali tautan dan pilihan yang sama untuk mencoba melanjutkan.</p>
+<p class="bullet">Status &amp; log menampilkan hasil tiap video. Hitungan akhir merujuk tautan masukan; satu tautan playlist dapat berisi banyak video.</p>
+<p class="bullet">Tautan yang selesai tanpa kesalahan proses belum tentu menghasilkan file baru: sumber bisa tidak memiliki subtitle atau file sudah ada. Periksa log dan folder.</p></section><section id="s5"><h2>5. PILIHAN JENIS UNDUHAN</h2><p>Video: mengambil video dengan suara. Pilihan kualitas adalah batas maksimum, bukan peningkatan resolusi sumber.</p>
+<p>Audio MP3: mengambil audio dan mengubahnya menjadi MP3; kualitas video tidak dipakai. Mengubah menjadi MP3 tidak memperbaiki audio sumber.</p>
+<p>Subtitle saja: mengambil subtitle yang tersedia tanpa video; tidak membuat transkrip baru dari audio.</p>
+<p>Paket arsip: mengambil video, deskripsi TXT, thumbnail, dan metadata .info.json. Aktifkan subtitle secara terpisah bila dibutuhkan.</p>
+<p>Format video mengikuti sumber: bisa MP4, WebM, atau MKV. Versi ini belum memaksa semua video menjadi MP4.</p></section><section id="s6"><h2>6. SELURUH OPSI TAMBAHAN</h2><p>Kualitas: Terbaik, 1080p, 720p, 480p, 360p. Jika sumber lebih rendah, kualitas sumber yang dipakai. Default 720p.</p>
+<p>Unduh playlist: nonaktif secara bawaan. Jika diaktifkan, tautan playlist dapat menghasilkan banyak file dan memakai ruang besar.</p>
+<p>Nomor playlist: kosong untuk semua, 1-5 untuk nomor 1 sampai 5, atau 1,3,5 untuk pilihan tertentu. Aktifkan playlist dahulu.</p>
+<p>Sertakan subtitle: menyimpan subtitle sebagai file terpisah, diutamakan VTT. Berlaku untuk video/audio/paket; mode Subtitle saja otomatis meminta subtitle.</p>
+<p>Subtitle otomatis: mengambil teks otomatis jika tersedia, bukan mentranskrip sendiri. Verifikasi teks sebelum dijadikan kutipan.</p>
+<p>Bahasa: id untuk Indonesia, en untuk Inggris, id,en untuk keduanya, atau all untuk semua. Hanya bahasa yang tersedia yang diambil.</p>
+<p>Metadata tambahan: menyimpan deskripsi, thumbnail, dan JSON pada mode Video/MP3. Mode Paket arsip sudah menyertakannya.</p>
+<p>Catatan unduhan: mencatat identitas unduhan berhasil di folder hasil. Catatan dipisahkan berdasarkan mode dan kualitas. Tidak aktif secara bawaan.</p>
+<p>Catatan tidak berlaku untuk subtitle saja atau potongan; matikan pilihan ini pada dua kebutuhan tersebut. Untuk mengambil ulang dengan metadata/subtitle baru, matikan catatan. File media yang sudah ada tetap tidak ditimpa.</p>
+<p>Potong durasi: isi mulai dan selesai dalam JJ:MM:DD, misalnya 00:05:00 dan 00:08:30. Kosongkan keduanya untuk mengunduh utuh. Memerlukan FFmpeg. Titik potong mungkin mengikuti keyframe; periksa jika membutuhkan presisi editing.</p>
+<p>Batas kecepatan: kosong = tanpa batas. 500K sekitar 500 KiB/detik, 2M sekitar 2 MiB/detik. Ini byte/detik, bukan bit/detik.</p>
+<p>Folder: bisa dipilih lewat tombol atau diketik. Hindari folder yang tidak boleh ditulisi.</p>
+<p>Nama file: judul + ID sumber + kualitas (atau mp3), serta waktu jika potongan. File lama tidak ditimpa.</p></section><section id="s7"><h2>7. MEMPERBARUI DAN MENJALANKAN SECARA MANUAL</h2><p class="bullet">Status &amp; log &gt; Perbarui yt-dlp memasang pembaruan yt-dlp[default,curl-cffi] pada Python aplikasi ini; membutuhkan internet.</p>
+<p class="bullet">Sejak 1.0.2, tombol tersebut juga melengkapi/memperbarui curl_cffi. Pada versi lama, gunakan perintah lengkap pada bagian 3 atau perbarui kode aplikasi. Paket tidak perlu dipasang ulang setiap membuka aplikasi.</p>
+<p class="bullet">Anda juga bisa menutup aplikasi lalu menjalankan INSTALL.bat lagi. Pembaruan tersebut tidak memperbarui kode Sedot Abis atau FFmpeg/Deno.</p>
+<p class="bullet">Jika perubahan situs membuat unduhan gagal, coba pembaruan dahulu. Rilis nightly dapat dicoba secara manual sesuai README resmi jika rilis stabil belum memperbaikinya.</p>
+<p class="bullet">Untuk menjalankan manual, buka Command Prompt di folder aplikasi:</p>
+<pre><code>.venv\Scripts\python.exe sedot_abis.py</code></pre>
+<p class="bullet">Alternatif instalasi manual dari folder aplikasi:</p>
+<pre><code>python -m venv .venv
+.venv\Scripts\python.exe -m pip install -U -r requirements.txt
+.venv\Scripts\python.exe sedot_abis.py</code></pre>
+<p class="bullet">Untuk nightly (opsional; tidak dipasang otomatis):</p>
+<pre><code>&quot;.venv\Scripts\python.exe&quot; -m pip install -U --pre &quot;yt-dlp[default,curl-cffi]&quot;</code></pre></section><section id="s8"><h2>8. PEMECAHAN MASALAH</h2><p>Warning impersonation / no impersonate target is available: periksa apakah curl_cffi terpasang pada .venv aplikasi. Ikuti perintah instalasi dan pemeriksaan target pada bagian 3. Paket di Python lain tidak cukup.</p>
+<p>WARNING dan ERROR berbeda: WARNING adalah peringatan; unduhan bisa tetap berjalan. ERROR menunjukkan masalah proses. Jangan menyimpulkan penyebab kegagalan hanya dari satu warning.</p>
+<p>Masih gagal setelah curl_cffi dipasang: simpan log lengkap sejak Mulai hingga ERROR melalui Status &amp; log &gt; Simpan log. Periksa pesan tentang login, video tidak tersedia, pembatasan koneksi, atau perubahan situs.</p>
+<p>Tombol bawah tidak terbaca: pastikan aplikasi memakai v1.0.1 atau lebih baru. Pembaruan ini memperbaiki ruang tombol dan pemeriksaan tautan. Ganti kode aplikasi dengan rilis terbaru; tidak perlu mengulang instalasi.</p>
+<p>Python tidak ditemukan: buka terminal baru setelah instalasi. Pastikan runtime terpasang dan perintah py -3 atau python bekerja. Jangan pilih paket embeddable.</p>
+<p>No module named tkinter: gunakan Modify pada installer Python dan tambahkan Tcl/Tk, lalu jalankan INSTALL.bat lagi.</p>
+<p>No module named yt_dlp: jalankan INSTALL.bat. Paket global dan paket .venv berbeda.</p>
+<p>FFmpeg/ffprobe belum ditemukan: gunakan cara manual tools\bin; pastikan bukan ZIP dan tidak tertanam di subfolder lain.</p>
+<p>Deno belum ditemukan: salin deno.exe ke tools\bin atau buka ulang aplikasi setelah instalasi winget.</p>
+<p>Jendela langsung tertutup: jalankan MULAI.bat dari Command Prompt untuk melihat pesan. Pastikan sedot_core.py ada di samping sedot_abis.py.</p>
+<p>Unduhan gagal/HTTP 403/429: perbarui yt-dlp, tunggu sebelum mencoba lagi, dan periksa akses situs. Situs dapat membatasi koneksi atau berubah. Tidak semua video dapat diunduh.</p>
+<p>Video memerlukan login: versi ini belum menyediakan penggunaan cookies atau login akun. Jangan menempel kata sandi pada kolom tautan.</p>
+<p>Subtitle tidak muncul: sumber mungkin tidak memiliki bahasa yang diminta. Coba all; periksa peringatan di log.</p>
+<p>File WebM/MKV: ini normal karena format mengikuti sumber. Gunakan pemutar/editor yang mendukung format tersebut.</p>
+<p>File .part: unduhan belum selesai. Coba lagi dengan tautan, folder, dan pilihan yang sama.</p>
+<p>Permission denied/ruang habis: pilih folder yang bisa ditulisi dan pastikan ruang penyimpanan cukup.</p>
+<p>Nomor playlist salah: gunakan 1-5 atau 1,3,5, tanpa spasi; aktifkan playlist.</p>
+<p>Video dilewati: periksa file yang sudah ada atau catatan unduhan. Nonaktifkan catatan jika ingin mengambil subtitle/metadata tambahan.</p></section><section id="s9"><h2>9. PENYIMPANAN DAN BATAS VERSI INI</h2><p class="bullet">Pengaturan terakhir disimpan di %LOCALAPPDATA%\SedotAbis\settings.json. Tautan tidak disimpan otomatis.</p>
+<p class="bullet">Log berada di tampilan aplikasi dan dapat disimpan manual sebagai TXT. Tampilan dibatasi sekitar 5.000 baris untuk menghemat memori.</p>
+<p class="bullet">Video, MP3, subtitle, metadata, dan catatan berada di folder tujuan pilihan pengguna.</p>
+<p class="bullet">Aplikasi berjalan lokal; tidak memakai server Zonautara, API AI, atau akun bersama. Komputer tetap terhubung ke situs sumber dan PyPI saat pembaruan.</p>
+<p class="bullet">Binary Python, FFmpeg, dan Deno tidak disertakan di ZIP ini. Pemasangan awal membutuhkan internet.</p>
+<p class="bullet">Versi ini belum menyediakan login/cookies, perekaman live dari awal, pengumpulan komentar, atau pemaksa format MP4.</p>
+<p class="bullet">Gunakan konten sesuai hak akses dan izin penggunaannya. File JSON dapat memuat informasi sumber/personal yang perlu diperiksa sebelum dibagikan.</p>
+<p class="bullet">Menghapus folder aplikasi membuang kode dan .venv. Hasil unduhan tetap berada di folder tujuan. Pengaturan dapat dihapus dari %LOCALAPPDATA%\SedotAbis jika ingin reset.</p></section><section id="s10"><h2>10. SUMBER DOKUMENTASI</h2><p>yt-dlp: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md" target="_blank" rel="noopener">https://github.com/yt-dlp/yt-dlp/blob/master/README.md</a></p>
+<p>Python Windows: <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">https://www.python.org/downloads/windows/</a></p>
+<p>FFmpeg: <a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener">https://ffmpeg.org/download.html</a></p>
+<p>Windows build FFmpeg: <a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" rel="noopener">https://www.gyan.dev/ffmpeg/builds/</a></p>
+<p>Deno: <a href="https://docs.deno.com/runtime/getting_started/installation/" target="_blank" rel="noopener">https://docs.deno.com/runtime/getting_started/installation/</a></p>
+<p>Impersonation yt-dlp: <a href="https://github.com/yt-dlp/yt-dlp#impersonation" target="_blank" rel="noopener">https://github.com/yt-dlp/yt-dlp#impersonation</a></p>
+<p>CATATAN VALIDASI</p>
+<p>Logika perintah dan pembatalan diuji otomatis. Perbaikan tata letak 1.0.1 diuji pada tiga ukuran jendela dan empat skala tampilan melalui Tk pada Linux. Alur klik dua tautan diuji dengan mesin unduhan simulasi. Keberhasilan pada satu tautan tidak berarti semua situs sudah teruji. Panduan dependensi merujuk README resmi yt-dlp.</p></section></article></main><footer>Pengunduh media internal · Bantuan tersedia tanpa koneksi internet</footer></html>

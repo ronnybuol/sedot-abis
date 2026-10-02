@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.part
+*.ytdl
+*.log
+settings.json
+hasil/
+downloads/
+tools/bin/*.exe
+tools/bin/*.dll
+tools/bin/*.zip

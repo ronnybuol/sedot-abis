@@ -1,0 +1,9 @@
+Untuk instalasi manual, salin tiga file ini langsung ke folder ini:
+ffmpeg.exe
+ffprobe.exe
+deno.exe
+
+Jangan menaruh ZIP atau hanya folder induknya di sini. Ekstrak dahulu.
+Sedot Abis juga dapat menemukan alat-alat tersebut melalui PATH Windows.
+Binary pihak ketiga tidak disertakan dalam paket Sedot Abis.
+Lihat PANDUAN.html untuk tautan sumber resmi.
